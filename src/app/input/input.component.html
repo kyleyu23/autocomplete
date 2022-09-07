@@ -1,0 +1,21 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input
+      type="text"
+      placeholder="Pick one"
+      aria-label="Title"
+      matInput
+      [formControl]="titleControl"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let title of filteredTitles | async" [value]="title">
+        {{ title }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="button" (click)="onSubmit()">
+    Add
+  </button>
+</form>

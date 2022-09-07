@@ -1,0 +1,16 @@
+<mat-card class="title">
+  Selected Titles
+  <mat-list role="list">
+    <mat-list-item *ngFor="let title of titles" role="listitem">
+      <p class="list-item-title">{{ title }}</p>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="selectedListChange.emit(title)"
+      >
+        Delete
+      </button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
